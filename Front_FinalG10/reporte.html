@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesReportes.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <nav class="bg-gradient-to-r from-indigo-600 to-gray-900 ">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-8 w-8"
+                            src="https://res.cloudinary.com/dqsb2do9p/image/upload/v1665907546/cuatri_tw0tiv.png"
+                            alt="Your Company">
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                            <a href="index.html" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                                aria-current="page">Inicio</a>
+
+                            <a href="categoria.html"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Categoria</a>
+
+                            <a href="quadbike.html"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Cuatrimoto</a>
+
+                            <a href="cliente.html"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
+
+                            <a href="mensajes.html"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Mensajes</a>
+
+                            <a href="reservaciones.html"
+                                class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Reservaciones</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="relative overflow-hidden bg-white">
+        <div class="mx-auto max-w-7xl">
+            <div class="relative z-10 bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32">
+                <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
+                    fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
+
+                <div>
+                    <div class="relative px-4 pt-6 sm:px-6 lg:px-8">
+
+                    </div>
+                    <main class="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                        <div class="sm:text-center lg:text-left">
+
+                            <div class="container px-5 py-24 mx-auto">
+                                <div class="flex flex-col text-center w-full mb-12">
+                                    <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+                                        <span class="block text-indigo-600 xl:inline">Cliente</span>
+                                    </h1>
+
+                                </div>
+                                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                                    <div class="flex flex-wrap -m-2">
+                                        <div class="p-2 w-full">
+                                            <button onclick="traerReporteStatus()"
+                                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Crear
+                                                Reporte Status Reservaciones</button>
+                                            <div id="resultado1"></div>
+                                        </div>
+                                        <div class="p-2 w-full">
+                                            <button onclick="traerRepoerteFechas()"
+                                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Crear
+                                                Reporte Fechas Reservaciones</button>
+                                        </div>
+                                        <div class="relative">
+                                            <label for="startDate" class="leading-7 text-sm text-gray-400">Ingrese la fecha de la
+                                                reservación</label>
+                                            <input type="date" id="startDate" name="startDate"
+                                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        </div>
+                                    </div>
+                                    <div class="p-2 w-1/2">
+                                        <div class="relative">
+                                            <label for="devolutionDate" class="leading-7 text-sm text-gray-400">Ingrese la fecha de
+                                                devolucion de la reservacion</label>
+                                            <input type="date" id="devolutionDate" name="devolutionDate"
+                                                class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                        </div>
+                                        <div class="p-2 w-full">
+                                            <button onclick="traerRepoerteClientes()"
+                                                class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Crear
+                                                Reporte Clientes Reservaciones</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+            <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
+                    src="https://res.cloudinary.com/dqsb2do9p/image/upload/v1665063648/cuatrimoto1_grxmrs.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
